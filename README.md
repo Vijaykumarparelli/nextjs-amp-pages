@@ -1,38 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+To write content I took referaces from [`Next.js`](https://nextjs.org/) documentation and [`AMP`](https://amp.dev/) documentation
 
-## Getting Started
+## Key Features
 
-First, run the development server:
+- **Faster Loading:** AMP pages are optimized for rapid loading, resulting in reduced page load times and improved user engagement.
+- **Pre-rendering:** AMP pages often pre-render in search engine results, allowing users to access content swiftly without waiting for full page loading.
+- **Limited JavaScript:** AMP enforces constraints on custom JavaScript usage, permitting only asynchronous and AMP-specific JavaScript. This enhances both performance and security.
+- **Responsive Design:** AMP websites are built with responsiveness in mind, ensuring content displays and functions well across various devices and screen sizes.
+- **Caching:** AMP content can be cached by content delivery networks (CDNs), making it readily available and decreasing server load.
+- **SEO Benefits:** Search engines like Google often prioritize AMP content in search results, potentially leading to increased visibility and traffic for AMP pages.
+- **Improved Ad Performance:** AMP supports fast-loading ads, contributing to a better user experience while still offering opportunities for publishers to monetize their content.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## [useAmp](https://nextjs.org/docs/pages/api-reference/functions/use-amp)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+With [`Next.js`](https://nextjs.org/) you can turn any React page into an AMP page, with minimal config, and without leaving React.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Enabling AMP
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+To enable AMP support for a page, and to learn more about the different AMP configs
+To enable AMP, add the following config to your page:
+`export const config = { amp: true }`
+`true` - The page will be AMP-only
+`hybrid` - The page will have two versions, one with AMP and another one with HTML
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+In this I go with `{ amp: true }`
