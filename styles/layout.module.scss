@@ -1,0 +1,47 @@
+@import './utils/mixins';
+.nav {
+  a {
+    @include headermenu();
+    &:not(:first-child) {
+      margin-left: 1.5rem;
+    }
+    &:hover {
+      color: var(--primary);
+    }
+    span {
+      font-size: 24px;
+    }
+  }
+}
+.logo_container {
+  font-size: 16px;
+  @include headermenu();
+  :not(:first-child) {
+    margin-left: 1rem;
+  }
+  .logo {
+    background-color: var(--primary);
+    border-radius: 5px;
+    padding: 8px 20px;
+  }
+}
+.navbar {
+  background-color: var(--primary-light);
+  padding: 20px;
+  a {
+    @include headermenu();
+    font-weight: 600;
+    font-size: 18px;
+    &:not(:first-child) {
+      margin-left: 1rem;
+    }
+    &:hover {
+      color: var(--primary);
+    }
+    &.navactive {
+      text-decoration-line: underline;
+      text-decoration-color: var(--primary);
+      text-underline-offset: 8px;
+    }
+  }
+}

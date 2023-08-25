@@ -18,7 +18,7 @@ With [`Next.js`](https://nextjs.org/) you can turn any React page into an AMP pa
 
 To enable AMP support for a page, and to learn more about the different AMP configs
 To enable AMP, add the following config to your page:
-`export const config = { amp: true }`
+`[#bd2864] export const config = { amp: true }`
 `true` - The page will be AMP-only
 `hybrid` - The page will have two versions, one with AMP and another one with HTML
 

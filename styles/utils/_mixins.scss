@@ -1,0 +1,34 @@
+@import './variables';
+
+@mixin breatepointAt($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+@mixin createAllSpaces() {
+  @each $key, $value in $spaces {
+    @each $key_one, $value_one in $m_p {
+      @if isarray($value_one) {
+        .#{$key_one}-#{$key} {
+          @each $value_two in $value_one {
+            #{$value_two}: $value;
+          }
+        }
+      } @else {
+        .#{$key_one}-#{$key} {
+          #{$value_one}: $value;
+        }
+      }
+    }
+  }
+}
+@mixin headermenu() {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: 0.25s linear;
+}
