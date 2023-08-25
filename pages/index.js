@@ -25,7 +25,7 @@ export async function getServerSideProps(ctx) {
   const genre = ctx.query?.genre || 'fetchTrending';
   let endpoint = `${process.env.NEXT_PUBLIC_API_URL}${
     genre === 'fetchTopRated' ? 'movie/top_rated' : 'trending/movie/week'
-  }?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US&page=1`;
+  }?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US&page=2`;
   const res = await fetch(endpoint);
   let data = await res.json();
   return {
