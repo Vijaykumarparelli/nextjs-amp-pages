@@ -1,11 +1,7 @@
-import NavbarItem from './navbar-item';
+import AmpNavbar from './amp-navbar';
+import SiteNavbar from './nav';
 
-const Navbar = ({ styles }) => {
-  return (
-    <div className={`d-flex justify-center ${styles.navbar}`}>
-      <NavbarItem title="Trending" param="fetchTrending" styles={styles} />
-      <NavbarItem title="Top Rated" param="fetchTopRated" styles={styles} />
-    </div>
-  );
+const Navbar = ({ styles, isAmp }) => {
+  return isAmp ? <AmpNavbar /> : <SiteNavbar styles={styles} />;
 };
 export default Navbar;
